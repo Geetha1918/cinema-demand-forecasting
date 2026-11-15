@@ -1,0 +1,290 @@
+{
+  "seed": 42,
+  "lead_hours": 48,
+  "split": {
+    "train": [
+      "2023-01-01 10:00:00",
+      "2023-12-31 22:00:00",
+      9119
+    ],
+    "validation": [
+      "2024-01-01 10:00:00",
+      "2024-03-31 22:00:00",
+      2274
+    ],
+    "test": [
+      "2024-04-01 10:00:00",
+      "2024-06-30 22:00:00",
+      2274
+    ]
+  },
+  "data_quality": {
+    "rows_raw": 13685,
+    "duplicates_removed": 10,
+    "negative_tickets_dropped": 8,
+    "over_capacity_clipped": 19,
+    "missing_price_imputed": 205,
+    "rows_clean": 13667
+  },
+  "chosen_hyperparameters": {
+    "ridge": {
+      "alpha": 100
+    },
+    "rf": {
+      "n": 200,
+      "leaf": 10
+    },
+    "hgb": {
+      "lr": 0.03,
+      "depth": 5,
+      "iter": 300,
+      "leaf": 60
+    }
+  },
+  "best_model": "hgb",
+  "strongest_baseline": "baseline_weekday_hour_slot",
+  "global_train_mean_occ": 0.5336781567179637,
+  "metrics": {
+    "val": {
+      "naive_global_mean": {
+        "n": 2274,
+        "MAE_tickets": 44.17845503100491,
+        "RMSE_tickets": 52.920484997094746,
+        "WAPE": 0.5279988160998648,
+        "MAE_occupancy": 0.2844396293818659,
+        "staffing_band_accuracy": 0.27792436235708,
+        "sellout_recall(pred>=85%)": 0.0,
+        "underforecast_tickets_share": 0.26661335183059814
+      },
+      "baseline_movie_history": {
+        "n": 2274,
+        "MAE_tickets": 47.336100994629376,
+        "RMSE_tickets": 58.932086132236655,
+        "WAPE": 0.5657374226058223,
+        "MAE_occupancy": 0.3007059319481453,
+        "staffing_band_accuracy": 0.3412489006156552,
+        "sellout_recall(pred>=85%)": 0.4742063492063492,
+        "underforecast_tickets_share": 0.11785185507007
+      },
+      "baseline_weekday_hour_slot": {
+        "n": 2274,
+        "MAE_tickets": 36.70703867326377,
+        "RMSE_tickets": 45.0325108327251,
+        "WAPE": 0.43870418167437575,
+        "MAE_occupancy": 0.23884747343922838,
+        "staffing_band_accuracy": 0.40325417766051014,
+        "sellout_recall(pred>=85%)": 0.0,
+        "underforecast_tickets_share": 0.22095820852115292
+      },
+      "ridge": {
+        "n": 2274,
+        "MAE_tickets": 19.720811198609123,
+        "RMSE_tickets": 26.114156942410023,
+        "WAPE": 0.23569327985976246,
+        "MAE_occupancy": 0.12732372245145657,
+        "staffing_band_accuracy": 0.7211961301671064,
+        "sellout_recall(pred>=85%)": 0.5238095238095238,
+        "underforecast_tickets_share": 0.12130783803897137
+      },
+      "rf": {
+        "n": 2274,
+        "MAE_tickets": 15.289352283726144,
+        "RMSE_tickets": 21.438437942503043,
+        "WAPE": 0.18273069755553062,
+        "MAE_occupancy": 0.09917945490327254,
+        "staffing_band_accuracy": 0.7902374670184696,
+        "sellout_recall(pred>=85%)": 0.7083333333333334,
+        "underforecast_tickets_share": 0.10760630153286115
+      },
+      "hgb": {
+        "n": 2274,
+        "MAE_tickets": 14.410083398371283,
+        "RMSE_tickets": 20.38822201055291,
+        "WAPE": 0.17222211525732672,
+        "MAE_occupancy": 0.09377592390507228,
+        "staffing_band_accuracy": 0.7915567282321899,
+        "sellout_recall(pred>=85%)": 0.7718253968253969,
+        "underforecast_tickets_share": 0.10112644684601996
+      }
+    },
+    "test": {
+      "naive_global_mean": {
+        "n": 2274,
+        "MAE_tickets": 45.85003323751888,
+        "RMSE_tickets": 54.099542379763236,
+        "WAPE": 0.5871787142928147,
+        "MAE_occupancy": 0.2963701353110105,
+        "staffing_band_accuracy": 0.24758135444151275,
+        "sellout_recall(pred>=85%)": 0.0,
+        "underforecast_tickets_share": 0.2603950891415508
+      },
+      "baseline_movie_history": {
+        "n": 2274,
+        "MAE_tickets": 45.395695265346674,
+        "RMSE_tickets": 57.73606099116167,
+        "WAPE": 0.5813602324397595,
+        "MAE_occupancy": 0.2885608047567751,
+        "staffing_band_accuracy": 0.39841688654353563,
+        "sellout_recall(pred>=85%)": 0.5112107623318386,
+        "underforecast_tickets_share": 0.1265571465243555
+      },
+      "baseline_weekday_hour_slot": {
+        "n": 2274,
+        "MAE_tickets": 39.44698573187381,
+        "RMSE_tickets": 47.80039884625896,
+        "WAPE": 0.5051780495944103,
+        "MAE_occupancy": 0.2559896281916066,
+        "staffing_band_accuracy": 0.37423043095866315,
+        "sellout_recall(pred>=85%)": 0.0,
+        "underforecast_tickets_share": 0.2224245589887206
+      },
+      "ridge": {
+        "n": 2274,
+        "MAE_tickets": 18.718598549322092,
+        "RMSE_tickets": 25.866440306117124,
+        "WAPE": 0.23971983995336066,
+        "MAE_occupancy": 0.12025570999236844,
+        "staffing_band_accuracy": 0.7629727352682498,
+        "sellout_recall(pred>=85%)": 0.5717488789237668,
+        "underforecast_tickets_share": 0.12617759736299172
+      },
+      "rf": {
+        "n": 2274,
+        "MAE_tickets": 16.16308426761779,
+        "RMSE_tickets": 24.43559732734608,
+        "WAPE": 0.20699263161057216,
+        "MAE_occupancy": 0.1030273040781868,
+        "staffing_band_accuracy": 0.7801231310466139,
+        "sellout_recall(pred>=85%)": 0.6457399103139013,
+        "underforecast_tickets_share": 0.11260703350264459
+      },
+      "hgb": {
+        "n": 2274,
+        "MAE_tickets": 15.140791211953191,
+        "RMSE_tickets": 22.628211383271644,
+        "WAPE": 0.1939006297150443,
+        "MAE_occupancy": 0.09699410467143621,
+        "staffing_band_accuracy": 0.8113456464379947,
+        "sellout_recall(pred>=85%)": 0.6681614349775785,
+        "underforecast_tickets_share": 0.10008408244839388
+      }
+    }
+  },
+  "test_by_group": {
+    "all": {
+      "baseline": {
+        "n": 2274,
+        "MAE_tickets": 39.44698573187381,
+        "RMSE_tickets": 47.80039884625896,
+        "WAPE": 0.5051780495944103,
+        "MAE_occupancy": 0.2559896281916066,
+        "staffing_band_accuracy": 0.37423043095866315,
+        "sellout_recall(pred>=85%)": 0.0,
+        "underforecast_tickets_share": 0.2224245589887206
+      },
+      "hgb": {
+        "n": 2274,
+        "MAE_tickets": 15.140791211953191,
+        "RMSE_tickets": 22.628211383271644,
+        "WAPE": 0.1939006297150443,
+        "MAE_occupancy": 0.09699410467143621,
+        "staffing_band_accuracy": 0.8113456464379947,
+        "sellout_recall(pred>=85%)": 0.6681614349775785,
+        "underforecast_tickets_share": 0.10008408244839388
+      }
+    },
+    "cold_start(0 prior shows)": {
+      "baseline": {
+        "n": 259,
+        "MAE_tickets": 43.38691607008769,
+        "RMSE_tickets": 48.91454229467951,
+        "WAPE": 0.3168803581905339,
+        "MAE_occupancy": 0.26999002479536505,
+        "staffing_band_accuracy": 0.25096525096525096,
+        "sellout_recall(pred>=85%)": 0.0,
+        "underforecast_tickets_share": 0.26131178456985765
+      },
+      "hgb": {
+        "n": 259,
+        "MAE_tickets": 23.859522659105245,
+        "RMSE_tickets": 36.534787708176374,
+        "WAPE": 0.17426023260696685,
+        "MAE_occupancy": 0.15191129745674303,
+        "staffing_band_accuracy": 0.7837837837837838,
+        "sellout_recall(pred>=85%)": 0.7810650887573964,
+        "underforecast_tickets_share": 0.07388366150685038
+      }
+    },
+    "low_data(1-9 prior shows)": {
+      "baseline": {
+        "n": 203,
+        "MAE_tickets": 34.32468060201362,
+        "RMSE_tickets": 39.92344895989749,
+        "WAPE": 0.37369463489267213,
+        "MAE_occupancy": 0.2324384971602344,
+        "staffing_band_accuracy": 0.42857142857142855,
+        "sellout_recall(pred>=85%)": 0.0,
+        "underforecast_tickets_share": 0.22246713022771059
+      },
+      "hgb": {
+        "n": 203,
+        "MAE_tickets": 9.499397777400615,
+        "RMSE_tickets": 13.967076010627503,
+        "WAPE": 0.10342045204399468,
+        "MAE_occupancy": 0.065706901881137,
+        "staffing_band_accuracy": 0.8719211822660099,
+        "sellout_recall(pred>=85%)": 0.9125,
+        "underforecast_tickets_share": 0.05611948569645205
+      }
+    },
+    "established(>=10 prior shows)": {
+      "baseline": {
+        "n": 1812,
+        "MAE_tickets": 39.45768439841036,
+        "RMSE_tickets": 48.44470154097422,
+        "WAPE": 0.579122650050378,
+        "MAE_occupancy": 0.2566269222749372,
+        "staffing_band_accuracy": 0.38576158940397354,
+        "sellout_recall(pred>=85%)": 0.0,
+        "underforecast_tickets_share": 0.2112481866444376
+      },
+      "hgb": {
+        "n": 1812,
+        "MAE_tickets": 14.526581180166101,
+        "RMSE_tickets": 20.73508235933882,
+        "WAPE": 0.21320744786454482,
+        "MAE_occupancy": 0.09264959541924875,
+        "staffing_band_accuracy": 0.8084988962472406,
+        "sellout_recall(pred>=85%)": 0.4720812182741117,
+        "underforecast_tickets_share": 0.1142498975309784
+      }
+    },
+    "movie_unseen_in_train": {
+      "baseline": {
+        "n": 2274,
+        "MAE_tickets": 39.44698573187381,
+        "RMSE_tickets": 47.80039884625896,
+        "WAPE": 0.5051780495944103,
+        "MAE_occupancy": 0.2559896281916066,
+        "staffing_band_accuracy": 0.37423043095866315,
+        "sellout_recall(pred>=85%)": 0.0,
+        "underforecast_tickets_share": 0.2224245589887206
+      },
+      "hgb": {
+        "n": 2274,
+        "MAE_tickets": 15.140791211953191,
+        "RMSE_tickets": 22.628211383271644,
+        "WAPE": 0.1939006297150443,
+        "MAE_occupancy": 0.09699410467143621,
+        "staffing_band_accuracy": 0.8113456464379947,
+        "sellout_recall(pred>=85%)": 0.6681614349775785,
+        "underforecast_tickets_share": 0.10008408244839388
+      }
+    }
+  },
+  "interval_coverage_test_80pct": {
+    "cold": 0.6640926640926641,
+    "low": 0.8325123152709359,
+    "est": 0.8134657836644592
+  }
+}
